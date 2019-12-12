@@ -1,0 +1,8 @@
+
+var imageSrc = function (image) {
+  return 'http://localhost:3000' + image
+}
+
+module.exports = {
+  imageSrc: imageSrc
+}

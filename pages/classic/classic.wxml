@@ -1,0 +1,36 @@
+<!--pages/classic/classic.wxml-->
+<view class="container">
+  <view class="header">
+  <k-epsoide index="{{classic.index}}"></k-epsoide>
+  <k-like 
+      bind:like="onLike"
+      like="{{likeStatus}}" 
+      count="{{likeCount}}" />
+  </view>
+    <k-movie
+      hidden="{{classic.type != 100}}"
+      img="{{image.imageSrc(classic.image)}}" 
+      content="{{classic.content}}" 
+    />
+    
+    <k-music
+      src="{{classic.url}}"
+      wx:if="{{classic.type == 200}}"
+      img="{{image.imageSrc(classic.image)}}" 
+      content="{{classic.content}}" 
+    />
+    <k-essay
+      hidden="{{classic.type != 300}}"
+      img="{{image.imageSrc(classic.image)}}" 
+      content="{{classic.content}}" 
+    />
+  
+  <k-navi 
+    bind:left="onNext"
+    bind:right="onPrevious"
+    title="{{classic.title}}"
+    latest="{{latest}}"
+    first="{{first}}" class="navi" />
+</view>
+
+<wxs src="../../util/image.wxs" module="image"></wxs>
