@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "k-book": "/components/book/index"
+  }
 }

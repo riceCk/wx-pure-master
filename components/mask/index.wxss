@@ -1,0 +1,11 @@
+/* components/mask/index.wxss */
+
+.container {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  background-color: #000;
+  z-index: 99;
+}
