@@ -5,6 +5,7 @@
     "k-epsoide": "/components/epsoide/index",
     "k-navi": "/components/navi/index",
     "k-essay": "/components/classic/essay/index",
-    "k-music": "/components/classic/music/index"
+    "k-music": "/components/classic/music/index",
+    "img-btn-cmp": "/components/imageButton/index"
   }
 }

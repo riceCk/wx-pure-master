@@ -36,12 +36,8 @@ class ClassicModel extends HTTP {
   /**
    * 设置缓存期刊缓存机制
    */
-  // 设置缓存机制期刊的key值
-  _getKey (index) {
-    let key = 'classic-' + index
-    return key
-  }
-  // 上一期期刊是否可点击
+
+   // 上一期期刊是否可点击
   isFirst (index) {
     return index == 1 ? true : false
   }
@@ -49,6 +45,20 @@ class ClassicModel extends HTTP {
   isLatest (index) {
     return index == this._getLatestIndex() ? true : false
   }
+
+  // 我喜欢的期刊
+  getMyFavor () {
+    return this.request({
+      url: 'classic/favor',
+    })
+  }
+
+  // 设置缓存机制期刊的key值
+  _getKey (index) {
+    let key = 'classic-' + index
+    return key
+  }
+  
 
   // 同步缓存最新期刊index
   _setLatestIndex(index) {

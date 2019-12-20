@@ -1,2 +1,55 @@
-<!--components/search/index.wxml-->
-<text>components/search/index.wxml</text>
+<view class="container">
+  <!-- 搜索input标签 -->
+  <view class="header">
+    <view class="search-container">
+      <image class="icon" src="./images/search.png" />
+      <input
+        class="bar" 
+        placeholder-class="in-bar" 
+        placeholder="书籍名" 
+        auto-focus="true"
+        bind:confirm="onConfirm"
+        value="{{q}}"
+      />
+      <image bind:tap="onDetete" class="cancel-img" src="images/cancel.png"></image>
+    </view>
+    <view bind:tap="onCancel" class="cancel">取消</view>
+  </view>
+  <!-- 历史搜索和热门搜索 -->
+  <view hidden="{{searching}}">
+    <view class="history">
+      <view class="title">
+        <view class="chunk"></view>
+        <text>历史搜索</text>
+      </view>
+      <view class="tags">
+        <block wx:for="{{historyWords}}" wx:key="*this">
+          <k-tag bind:tapping="onConfirm" text="{{item}}" />
+        </block>
+      </view>
+    </view>
+
+    <view class="history hot-search">
+      <view class="title">
+        <view class="chunk"></view>
+        <text >热门搜索</text>
+      </view>
+      <view class="tags">
+        <block wx:for="{{hotWords}}" wx:key="*this">
+          <k-tag bind:tapping="onConfirm" text="{{item}}" />
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索的具体内容 -->
+  <view hidden="{{!searching}}" class="books-container">
+    <block wx:for="{{dataArray}}" wx:key="{{item.id}}">
+      <k-book book="{{item}}" class="book" />
+    </block>
+  </view>
+
+  <k-loading class="loading-center" wx:if="{{loadingCenter}}" />
+  <k-loading class="loading" wx:if="{{loading}}" />
+  <text wx:if="{{noneResult}}" class="empty-tip">没有搜索到数据</text>
+</view>

@@ -1,4 +1,8 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "k-tag": "/components/tag/index",
+    "k-book": "/components/book/index",
+    "k-loading": "/components/loading/index"
+  }
 }

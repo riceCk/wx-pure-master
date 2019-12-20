@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "k-tag": "/components/tag/index",
+    "img-btn-cmp": "/components/imageButton/index",
+    "k-preview": "/components/preview/index"
+  },
+  "backgroundColor": "#f5f5f5"
 }

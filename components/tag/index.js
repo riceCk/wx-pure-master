@@ -22,7 +22,6 @@ Component({
    */
   methods: {
     onTap (event) {
-      console.log(123123)
       this.triggerEvent('tapping', {
         text: this.data.text
       })

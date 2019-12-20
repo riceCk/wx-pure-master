@@ -2,11 +2,17 @@
 <view class="container">
   <view class="header">
   <k-epsoide index="{{classic.index}}"></k-epsoide>
-  <k-like 
-      bind:like="onLike"
-      like="{{likeStatus}}" 
-      count="{{likeCount}}" />
+  <view class="like-container">
+    <k-like 
+        bind:like="onLike"
+        like="{{likeStatus}}" 
+        count="{{likeCount}}" />
+    <img-btn-cmp  class="share-btn" open-type="share">
+      <image class="share" slot="image" src="/images/icon/share.png" />
+    </img-btn-cmp>
   </view>
+  
+</view>
     <k-movie
       hidden="{{classic.type != 100}}"
       img="{{image.imageSrc(classic.image)}}" 

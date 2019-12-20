@@ -83,7 +83,6 @@ Page({
       content: comment,
       nums: 1
     })
-    console.log(comments, 123123)
     this.setData({
       comments,
       posting: false
